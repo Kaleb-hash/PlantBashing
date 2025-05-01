@@ -85,7 +85,17 @@ else
 	exit
 fi
 sleep 2
-echo "You wake up next to your Sunflower"
+echo "You wake up next to your Sunflower looking at it and seeing leaves! You decide to put a meter stick in the ground beside the Sunflower, recording the growth. Today marks 2cm and 2 leaves."
+
+count=2
+
+while true; do
+	read -p "Say something: " input
+	if [[ "$input" == "Yes" ]]; then
+		echo "$count"
+		count =$((count + 2))
+	fi
+done
 
 sleep 2
 echo "Goodbye."
