@@ -87,13 +87,22 @@ fi
 sleep 2
 echo "You wake up next to your Sunflower looking at it and seeing leaves! You decide to put a meter stick in the ground beside the Sunflower, recording the growth. Today marks 2cm and 2 leaves."
 
-count=2
+plant_height=2
+plant_leaves=2
+day=5
 
 while true; do
-	read -p "Say something: " input
-	if [[ "$input" == "Yes" ]]; then
-		echo "$count"
-		count =$((count + 2))
+	read -p "Would you like to sleep, letting your Sunflower continue to grow? (Yes/No)"
+	if [[ "$answer" == "Yes" ]]; then
+		((day++))
+		((plant_height+=2))
+		((plant_leaves+=2))
+		echo ""
+		echo "Day $day: Your plant is now $plant_height cm tall with $plant_leaves leaves"
+		echo ""
+	elif [[ "$answer" == "No" ]]; then
+		echo "Okay, your plant is resting. Come back later!"
+		break
 	fi
 done
 
