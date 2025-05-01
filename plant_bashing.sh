@@ -92,20 +92,33 @@ plant_leaves=2
 day=5
 
 while true; do
-	read -p "Would you like to sleep, letting your Sunflower continue to grow? (Yes/No)"
-	if [[ "$answer" == "Yes" ]]; then
-		((day++))
-		((plant_height+=2))
-		((plant_leaves+=2))
-		echo ""
-		echo "Day $day: Your plant is now $plant_height cm tall with $plant_leaves leaves"
-		echo ""
-	elif [[ "$answer" == "No" ]]; then
-		echo "Okay, your plant is resting. Come back later!"
-		break
-	fi
+    read -p "Would you like to sleep, letting your Sunflower continue to grow? (Yes/No): " answer
+
+    if [[ $day -ge 21 ]]; then
+    	echo "Sorry, your Sunflower has reached its growth limit!"
+    	break
+    fi
+
+    if [[ "$answer" == "Yes" ]]; then
+        ((day++))
+        ((plant_height+=2))
+        ((plant_leaves+=2))
+        echo ""
+        echo "Day $day: Your plant is now $plant_height cm tall with $plant_leaves leaves."
+        echo ""
+    elif [[ "$answer" == "No" ]]; then
+        echo "Okay, your plant is resting. Come back later!"
+        break
+    else
+        echo "Please answer with 'Yes' or 'No'."
+    fi
 done
+
 
 sleep 2
 echo "Goodbye."
 exit
+
+
+
+
