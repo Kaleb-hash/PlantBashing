@@ -1,13 +1,17 @@
 #!/bin/bash
 
+echo "Welcome to the Plants vs Zombie's the Sequel"
+sleep 2
+echo "What is your farmer name?"
+read name
+
+
+
 while true; do
-	echo "Welcome to the Plants vs Zombie the sequel"
-	echo "What is your farmer name"
-
-	read name
-	sleep 1
+	
 	echo "Hello, $name!"
-
+	sleep 2
+	
 	read -p "Would you like to plant a seed? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
