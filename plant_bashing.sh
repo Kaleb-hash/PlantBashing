@@ -8,14 +8,15 @@ read name
 
 
 while true; do
-	
+
 	echo "Hello, $name!"
 	sleep 2
-	
+
 	read -p "Would you like to plant a seed? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
-		echo "You've dug a small hole and planted a Sunflower seed the size of an inch."
+		echo "Great you've dug a hole and plated a seed! The seed is very small but one day will become huge! Would you like to name it?"
+
 	else
 		echo "Goodbye, $name."
 		exit
@@ -23,10 +24,26 @@ while true; do
 
 	sleep 2
 
+	read -p "Would you like to name your plant? (Yes/No):" answer
+
+	if [ "$answer" == "Yes" ]; then
+		echo "What would you like to name your plant?"
+		read plant_name
+		echo "Your plant is named $plant_name!"
+		
+	else
+		plant_name="Morpheus"
+		echo "Fine by me! It'll be known as $plant_name"
+	fi
+
+	sleep 2
+	echo "You take a quick nap before setting up your $plant_name"
+	sleep 2
+
 	echo "In the Plants vs Zombie's dimension, time moves faster... for every 1 minute equals to 1 hour"
 	sleep 2
 
-	read -p "Would you like to wait for you Sunflower to grow? (Yes/No):" answer
+	read -p "Would you like to wait for you $plant_name to grow? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
 		echo "You sleep for the day, hoping your Sunflower will grow"
