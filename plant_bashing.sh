@@ -46,19 +46,19 @@ while true; do
 	read -p "Would you like to wait for you $plant_name to grow? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
-		echo "You sleep for the day, hoping your Sunflower will grow"
+		echo "You sleep for the day, hoping your $plant_name will grow"
 	else
 		echo "You leave your house never seen again..."
 		exit
 	fi
 
 	sleep 2
-	echo "You wake up and run to your Sunflower to find that nothings happend..."
+	echo "You wake up and run to your $plant_name to find that nothings happend..."
 
 	read -p "Would you like to wait another day? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
-		echo "You sleep for the day once again, hoping your Sunflower will grow"
+		echo "You sleep for the day once again, hoping your $plant_name will grow"
 	else
 		echo "You moved out, leaving the plant behind."
 		exit
@@ -75,7 +75,7 @@ while true; do
 	read -p "Would you like to wait another day? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
-		echo "You sleep for the day yet another time, hoping your Sunflower will reach the next stage..."
+		echo "You sleep for the day yet another time, hoping your $plant_name will reach the next stage..."
 	else
 		echo "You give up on your dream, leaving the plant behind..."
 		exit
@@ -101,23 +101,23 @@ while true; do
 	read -p "Would you like to watch the sapling grow? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
-		echo "You watch your very own Sunflower grow, growing attachments to it, you decide to sleep on your porch next to your own Sunflower."
+		echo "You watch your very own Sunflower grow, growing attachments to it, you decide to sleep on your porch next to your own $plant_name."
 	else
 		echo "You leave your plant behind, ignoring the idea of it in general"
 		exit
 	fi
 	sleep 2
-	echo "You wake up next to your Sunflower looking at it and seeing leaves! You decide to put a meter stick in the ground beside the Sunflower, recording the growth. Today marks 2cm and 2 leaves."
+	echo "You wake up next to your $plant_name looking at it and seeing leaves! You decide to put a meter stick in the ground beside the $plant_name, recording the growth. Today marks 2cm and 2 leaves."
 
 	plant_height=2
 	plant_leaves=2
 	day=5
 
 	while true; do
-	    read -p "Would you like to sleep, letting your Sunflower continue to grow? (Yes/No): " answer
+	    read -p "Would you like to sleep, letting your $plant_name continue to grow? (Yes/No): " answer
 
 	    if [[ $day -ge 21 ]]; then
-	    	echo "Sorry, your Sunflower has reached its growth limit!"
+	    	echo "Sorry, your $plant_name has reached its growth limit!"
 	    	break
 	    fi
 
