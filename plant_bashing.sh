@@ -9,7 +9,7 @@ read name
 
 while true; do
 
-	echo "Hello, $name!"
+	echo "Hey, $name!"
 	sleep 2
 
 	read -p "Would you like to plant a seed? (Yes/No):" answer
