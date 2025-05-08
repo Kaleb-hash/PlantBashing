@@ -24,41 +24,29 @@ while true; do
 
 	sleep 2
 
-	read -p "Would you like to name your plant? (Yes/No):" answer
-
-	if [ "$answer" == "Yes" ]; then
-		echo "What would you like to name your plant?"
-		read plant_name
-		echo "Your plant is named $plant_name!"
-		
-	else
-		plant_name="Morpheus"
-		echo "Fine by me! It'll be known as $plant_name"
-	fi
-
 	sleep 2
-	echo "You take a quick nap before setting up your $plant_name"
+	echo "You take a quick nap before setting up your seed"
 	sleep 2
 
 	echo "In the Plants vs Zombie's dimension, time moves faster... for every 1 minute equals to 1 hour"
 	sleep 2
 
-	read -p "Would you like to wait for you $plant_name to grow? (Yes/No):" answer
+	read -p "Would you like to wait for you seee to grow? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
-		echo "You sleep for the day, hoping your $plant_name will grow"
+		echo "You sleep for the day, hoping your seed will grow"
 	else
 		echo "You leave your house never seen again..."
 		exit
 	fi
 
 	sleep 2
-	echo "You wake up and run to your $plant_name to find that nothings happend..."
+	echo "You wake up and run to your seed to find that nothings happend..."
 
 	read -p "Would you like to wait another day? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
-		echo "You sleep for the day once again, hoping your $plant_name will grow"
+		echo "You sleep for the day once again, hoping your seed will grow"
 	else
 		echo "You moved out, leaving the plant behind."
 		exit
@@ -72,6 +60,19 @@ while true; do
 	sleep 2
 	echo "You jump with joy and realize you've started your journey to become an elite farmer!"
 	sleep 2
+
+	read -p "Would you like to name your plant? (Yes/No):" answer
+
+	if [ "$answer" == "Yes" ]; then
+		echo "What would you like to name your plant?"
+		read plant_name
+		echo "Your plant is named $plant_name!"
+		
+	else
+		plant_name="Morpheus"
+		echo "Fine by me! It'll be known as $plant_name"
+	fi
+
 	read -p "Would you like to wait another day? (Yes/No):" answer
 
 	if [ "$answer" == "Yes" ]; then
