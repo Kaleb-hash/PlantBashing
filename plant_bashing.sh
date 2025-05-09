@@ -16,12 +16,14 @@ while true; do
 
 	read -p "Would you like to plant a seed? (Yes/No):" answer
 
-	if [ "first_play" == false ]; then
+	if [ "$first_play" == true ]; then
 		read -p "Would you like to change your plants name? (Yes/No)" answer
 		if [ "$answer" == "Yes" ]; then
 			echo "What would you like to name your plant?"
 			read plant_name
 			echo "Your plant is named $plant_name!"
+		fi
+	fi
 
 	if [ "$answer" == "Yes" ]; then
 		echo "Great you've dug a hole and plated a seed! The seed is very small but one day will become huge! Would you like to name it?"
@@ -68,8 +70,6 @@ while true; do
 	sleep 2
 	echo "You jump with joy and realize you've started your journey to become an elite farmer!"
 	sleep 2
-
-	if [ "$first_play" == true]
 
 	if [ "$first_play" == true ]; then
         read -p "Would you like to name your plant? (Yes/No):" answer
