@@ -1,5 +1,7 @@
 #!/bin/bash
 
+first_play=true
+
 echo "Welcome to the Plants vs Zombie's the Sequel"
 sleep 2
 echo "What is your farmer name?"
@@ -14,11 +16,17 @@ while true; do
 
 	read -p "Would you like to plant a seed? (Yes/No):" answer
 
+	if [ "first_play" == false ]; then
+		read -p "Would you like to change your plants name? (Yes/No)" answer
+		if [ "$answer" == "Yes" ]; then
+			echo "What would you like to name your plant?"
+			read plant_name
+			echo "Your plant is named $plant_name!"
+
 	if [ "$answer" == "Yes" ]; then
 		echo "Great you've dug a hole and plated a seed! The seed is very small but one day will become huge! Would you like to name it?"
-
 	else
-		echo "Goodbye, $name."
+		echo "Goodbye..."
 		exit
 	fi
 
@@ -61,17 +69,19 @@ while true; do
 	echo "You jump with joy and realize you've started your journey to become an elite farmer!"
 	sleep 2
 
-	read -p "Would you like to name your plant? (Yes/No):" answer
+	if [ "$first_play" == true]
 
-	if [ "$answer" == "Yes" ]; then
-		echo "What would you like to name your plant?"
-		read plant_name
-		echo "Your plant is named $plant_name!"
-		
-	else
-		plant_name="Morpheus"
-		echo "Fine by me! It'll be known as $plant_name"
-	fi
+	if [ "$first_play" == true ]; then
+        read -p "Would you like to name your plant? (Yes/No):" answer
+        if [ "$answer" == "Yes" ]; then
+            echo "What would you like to name your plant?"
+            read plant_name
+            echo "Your plant is named $plant_name!"
+        else
+            plant_name="Morpheus"
+            echo "Fine by me! It'll be known as $plant_name"
+        fi
+    fi
 
 	read -p "Would you like to wait another day? (Yes/No):" answer
 
@@ -142,5 +152,6 @@ while true; do
 		echo "Thanks for playing, $name. Goodbye!"
 		break
 	fi
+	first_play=false 
 
 done
