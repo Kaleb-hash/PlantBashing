@@ -16,23 +16,23 @@ while true; do
 
 	read -p "Would you like to plant a seed? (Yes/No):" answer
 
-	if [ "$first_play" == true ]; then
-		read -p "Would you like to change your plants name? (Yes/No)" answer
+	if [ "$first_play" == false ]; then
+		read -p "Awesome! Would you like to change your plants name? (Yes/No)" answer
 		if [ "$answer" == "Yes" ]; then
 			echo "What would you like to name your plant?"
 			read plant_name
 			echo "Your plant is named $plant_name!"
+		else
+			echo "Well then... we will keep it the same as the last run!"
 		fi
 	fi
-
+	sleep 2
 	if [ "$answer" == "Yes" ]; then
-		echo "Great you've dug a hole and plated a seed! The seed is very small but one day will become huge! Would you like to name it?"
+		echo "Great you've dug a hole and plated a seed! The seed is very small but one day will become huge!"
 	else
 		echo "Goodbye..."
 		exit
 	fi
-
-	sleep 2
 
 	sleep 2
 	echo "You take a quick nap before setting up your seed"
@@ -72,7 +72,7 @@ while true; do
 	sleep 2
 
 	if [ "$first_play" == true ]; then
-        read -p "Would you like to name your plant? (Yes/No):" answer
+        read -p "Great! Would you like to name your plant? (Yes/No):" answer
         if [ "$answer" == "Yes" ]; then
             echo "What would you like to name your plant?"
             read plant_name
@@ -81,6 +81,7 @@ while true; do
             plant_name="Morpheus"
             echo "Fine by me! It'll be known as $plant_name"
         fi
+        first_play=false
     fi
 
 	read -p "Would you like to wait another day? (Yes/No):" answer
@@ -152,6 +153,4 @@ while true; do
 		echo "Thanks for playing, $name. Goodbye!"
 		break
 	fi
-	first_play=false 
-
 done
