@@ -151,6 +151,9 @@ while true; do
 	read -p "Would you like to play agian? (Yes/No):" play_again
 	if [[ "$play_again" != "Yes" ]]; then
 		echo "Thanks for playing, $name. Goodbye!"
+		sleep 2
+		exit
 		break
 	fi
 done
+
